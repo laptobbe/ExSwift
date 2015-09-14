@@ -629,8 +629,11 @@ internal extension Array {
         - returns: Last n elements
     */
     func tail (n: Int) -> Array {
-
-        return  Array(self[(count - n)..<count])
+        var index = self.count - n
+        if index < 0 {
+            index = 0
+        }
+        return  Array(self[index..<count])
         
     }
 
