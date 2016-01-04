@@ -158,7 +158,7 @@ internal extension Array {
     func indexOf <U: Equatable> (item: U) -> Int? {
         if item is Element {
             return self.indexOf({ (object) -> Bool in
-                return (object as! U) == item
+                return (object as? U) == item
             })
         }
         
@@ -174,7 +174,7 @@ internal extension Array {
     func lastIndexOf <U: Equatable> (item: U) -> Int? {
         if item is Element {
             for (index, value) in self.reverse().enumerate() {
-                if value as! U == item {
+                if value as? U == item {
                     return count - 1 - index
                 }
             }
@@ -680,8 +680,8 @@ internal extension Array {
         var result = [Element]()
 
         for item in self {
-            if !result.contains(item as! Element) {
-                result.append(item as! Element)
+            if let item = item as? Element where !result.contains(item) {
+                result.append(item)
             }
         }
 
