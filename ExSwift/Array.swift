@@ -579,7 +579,7 @@ internal extension Array {
         - returns: First n elements
     */
     func take (n: Int) -> Array {
-        return Array(self[0..<Swift.max(0, n)])
+        return Array(self[0..<Swift.min(self.count, n)])
     }
 
     /**
