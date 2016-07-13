@@ -750,7 +750,25 @@ internal extension Array {
         }
         return endArray
     }
-
+    
+    func groupByMultiple <U> (groupingFunction group: (Element) -> [U]) -> [U: Array] {
+        
+        var result = [U: Array]()
+        
+        for item in self {
+            for groupKey in group(item) {
+                // If element has already been added to dictionary, append to it. If not, create one.
+                if result.has(groupKey) {
+                    result[groupKey]! += [item]
+                } else {
+                    result[groupKey] = [item]
+                }
+            }
+        }
+        
+        return result
+    }
+    
     /**
         Creates a dictionary composed of keys generated from the results of
         running each element of self through groupingFunction. The corresponding
