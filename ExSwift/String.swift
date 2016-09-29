@@ -16,11 +16,6 @@ public extension String {
     var length: Int { return self.characters.count }
 
     /**
-        self.capitalizedString shorthand
-    */
-    var capitalized: String { return capitalized }
-
-    /**
         Returns the substring in the given range
 
         - parameter range:
@@ -224,6 +219,7 @@ public extension String {
         - parameter charset: Chars to use in the random string
         - returns: Random string
     */
+    /*
     static func random (_ length: Int = 0, charset: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") -> String {
         var len = length
 
@@ -241,6 +237,7 @@ public extension String {
         return result
 
     }
+     */
 
 
     /**
@@ -341,6 +338,7 @@ public extension String {
 /**
     Repeats the string first n times
 */
+/*
 public func * (first: String, n: Int) -> String {
 
     var result = String()
@@ -442,3 +440,4 @@ public func |~ (strings: [String], options: (pattern: String, ignoreCase: Bool))
     return result
 
 }
+*/

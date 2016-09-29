@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 public extension Int {
     
     /**
@@ -254,3 +255,5 @@ public extension Int {
     }
 
 }
+ 
+ */

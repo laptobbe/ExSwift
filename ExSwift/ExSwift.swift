@@ -235,6 +235,7 @@ func <=> <T: Comparable>(lhs: T, rhs: T) -> Int {
 /**
 *  Internal methods
 */
+/*
 extension ExSwift {
     
     /**
@@ -275,3 +276,4 @@ extension ExSwift {
     }
     
 }
+ */

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 public extension NSArray {
 
   /**
@@ -15,6 +16,7 @@ public extension NSArray {
 
    - returns: Array of Swift objects
    */
+    
   public func cast <OutType> () -> [OutType] {
     var result = [OutType]()
 
@@ -63,3 +65,4 @@ public extension NSArray {
   }
 
 }
+*/

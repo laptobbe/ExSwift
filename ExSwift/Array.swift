@@ -396,6 +396,7 @@ internal extension Array {
     /**
         Randomly rearranges the elements of self using the Fisher-Yates shuffle
     */
+    /*
     mutating func shuffle () {
 
         for i in (1..<self.count).reversed() {
@@ -418,6 +419,7 @@ internal extension Array {
 
         return shuffled
     }
+     */
 
     /**
         Returns a random subarray of given length.
@@ -425,6 +427,7 @@ internal extension Array {
         - parameter n: Length
         - returns: Random subarray of length n
     */
+    /*
     func sample (size n: Int = 1) -> Array {
         if n >= count {
             return self
@@ -433,7 +436,7 @@ internal extension Array {
         let index = Int.random(max: count - n)
         return Array(self[index..<(n + index)])
     }
-
+     */
     /**
         Max value in the current array (if Array.Element implements the Comparable protocol).
     
@@ -708,7 +711,7 @@ internal extension Array {
         var result = [Element]()
 
         for item in self {
-            if let item = item as? Element where !result.contains(item) {
+            if let item = item as? Element, !result.contains(item) {
                 result.append(item)
             }
         }
@@ -743,6 +746,7 @@ internal extension Array {
         - parameter length: The length of each permutation
         - returns: All permutations of a given length within an array
     */
+    /*
     func permutation (_ length: Int) -> [[Element]] {
         if length < 0 || length > self.count {
             return []
@@ -778,6 +782,7 @@ internal extension Array {
         }
         return endArray
     }
+     */
     
     func groupByMultiple <U> (groupingFunction group: (Element) -> [U]) -> [U: Array] {
         
@@ -854,6 +859,7 @@ internal extension Array {
         - parameter length:
         - returns: Combinations
     */
+    /*
     func repeatedCombination (_ length: Int) -> [[Element]] {
         if length < 0 {
             return []
@@ -921,13 +927,14 @@ internal extension Array {
         }
         return combinations
     }
-
+     */
     /**
         Returns all of the permutations of this array of a given length, allowing repeats
         
         - parameter length: The length of each permutations
         :returns All of the permutations of this array of a given length, allowing repeats
     */
+    /*
     func repeatedPermutation(_ length: Int) -> [[Element]] {
         if length < 1 {
             return []
@@ -948,7 +955,7 @@ internal extension Array {
             self.repeatedPermutationHelper(newSeed, length: length, arrayLength: arrayLength, permutationIndexes: &permutationIndexes)
         }
     }
-
+ */
     /**
         Returns the number of elements which meet the condition
 
@@ -968,6 +975,7 @@ internal extension Array {
         return result
     }
 
+    /*
     func eachIndex (_ call: @escaping (Int) -> ()) -> () {
         (0..<self.count).each({ call($0) })
     }
@@ -1003,7 +1011,7 @@ internal extension Array {
             self[i] = object
         }
     }
-
+     */
     /**
         Joins the array elements with a separator.
 
@@ -1137,6 +1145,7 @@ internal extension Array {
     
         - returns: Flattened array
     */
+    /*
     func flatten <OutType> () -> [OutType] {
         var result = [OutType]()
         let mirror = Mirror(reflecting: self)
@@ -1169,6 +1178,7 @@ internal extension Array {
         
         return result
     }
+     */
 
     /**
         Sorts the array according to the given comparison function.
@@ -1348,9 +1358,11 @@ internal extension Array {
         - parameter range:
         - returns: Array of values
     */
+    /*
     @available(*, unavailable, message: "use the '[U](range)' constructor") func range <U: Comparable> (_ range: Range<U>) -> [U] {
         return [U](range)
     }
+ */
 
     /**
         Returns the subarray in the given range.
@@ -1358,6 +1370,7 @@ internal extension Array {
         - parameter range: Range of the subarray elements
         - returns: Subarray or nil if the index is out of bounds
     */
+    /*
     subscript (rangeAsArray rangeAsArray: Range<Int>) -> Array {
         //  Fix out of bounds indexes
         let start = Swift.max(0, rangeAsArray.lowerBound)
@@ -1369,6 +1382,7 @@ internal extension Array {
             
         return Array(self[start ..< end] as ArraySlice<Element>)
     }
+     */
 
     /**
         Returns a subarray whose items are in the given interval in self.
@@ -1376,9 +1390,11 @@ internal extension Array {
         - parameter interval: Interval of indexes of the subarray elements
         - returns: Subarray or nil if the index is out of bounds
     */
+    /*
     subscript (interval: Range<Int>) -> Array {
         return self[rangeAsArray: interval.start ..< interval.end]
     }
+ */
     
     /**
         Returns a subarray whose items are in the given interval in self.
@@ -1386,9 +1402,11 @@ internal extension Array {
         - parameter interval: Interval of indexes of the subarray elements
         - returns: Subarray or nil if the index is out of bounds
     */
+    /*
     subscript (interval: ClosedRange<Int>) -> Array {
         return self[rangeAsArray: interval.start ..< (interval.end + 1)]
     }
+ */
     
     /**
         Creates an array with the elements at indexes in the given list of integers.
@@ -1398,10 +1416,12 @@ internal extension Array {
         - parameter rest: Rest of indexes
         - returns: Array with the items at the specified indexes
     */
+    /*
     subscript (first: Int, second: Int, rest: Int...) -> Array {
         let indexes = [first, second] + rest
         return indexes.map { self[$0] }
     }
+     */
 }
 
 
@@ -1419,6 +1439,7 @@ public func - <Element: Equatable> (first: [Element], second: [Element]) -> [Ele
     return first.difference(second)
 }
 
+/*
 /**
     Intersection operator
 */
@@ -1450,3 +1471,4 @@ public func * <ItemType> (array: [ItemType], n: Int) -> [ItemType] {
     return result
 
 }
+*/
